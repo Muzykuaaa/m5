@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: cornflowerblue;
+}
+header {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+header > nav > a {
+  text-decoration: none;
+  font-size: 17px;
+  margin: 10px;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+}
+header > i {
+  color: white;
+  font-size: 23px;
+}
