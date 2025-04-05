@@ -15,7 +15,7 @@ div {
   display: flex;
 
   gap: 10px;
-  transform: translateX(-1п00px);
+  transform: translateX(-100px);
 }
 img {
   width: 50%;

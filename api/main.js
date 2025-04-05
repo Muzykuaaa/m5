@@ -6,7 +6,7 @@ let dataCard;
 searchBtn.addEventListener("click", getCard);
 
 async function getCard() {
-//   spiner.classList.remove("none");
+  //   spiner.classList.remove("none");
   let response = await fetch(`https://api.github.com/users/${search.value}`);
   if (response.ok) {
     dataCard = await response.json();
@@ -14,26 +14,26 @@ async function getCard() {
   } else {
     console.log("не верные данные");
   }
-//   spiner.classList.add("none");
+  //   spiner.classList.add("none");
 }
 
 function generateCard() {
   console.log(dataCard);
   main.classList.remove("none");
-  main.innerHTML = `        <img src="https://play-lh.googleusercontent.com/aW22h9t8Lzb9kiB6fVuh9-E6-ilsm45bo7p2HWWocxDJLdKDcwK42VvJ7qMZo0capeQ=w526-h296-rw">
-        <h1>Login</h1>
-        <p>Описание </p>
+  main.innerHTML = `        <img src="${dataCard.avatar_url}">
+        <h1>${dataCard.login}</h1>
+        <p>${dataCard.bio} </p>
         
         <div>
             <i class="fas fa-heart"></i>
-            <span>Репозиториев: 5</span>
+            <span>Репозиториев: ${dataCard.public_repos}</span>
         </div>
         <div>
             <i class="fas fa-fire-alt"></i>
-            <span>Репозиториев: 5</span>
+            <span>Подписчиков: ${dataCard.followers}</span>
         </div>
         <div>
-            <i class="fas fa-thumbs-down"></i>
-            <span>Репозиториев: 5</span>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Локация: ${dataCard.location}</span>
         </div>`;
 }
